@@ -29,8 +29,8 @@ export default async function Home() {
         <div className="grid w-full gap-[20px]  grid-cols-1" >
             {
               user[0]?.posts.map((val : any)=>(
-              <Link href={`/posts/${val.slug}`} key={val.id} className="w-full bg-slate-700 rounded-4xl py-3 flex justify-center  text-white text-[1.5rem]" >
-                <h1>{val.title}</h1> 
+              <Link href={`/posts/${val?.slug}`} key={val?.id} className="w-full bg-slate-700 rounded-4xl py-3 flex justify-center  text-white text-[1.5rem]" >
+                <h1>{val?.title}</h1> 
               </Link>
               ))
             }

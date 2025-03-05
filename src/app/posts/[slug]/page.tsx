@@ -3,19 +3,18 @@
 import { prisma } from '@/lib/db';
 // import { unstable_cache as cache } from 'next/cache';
 import Link from 'next/link';
- 
-type PostPageProps = {
-    params: {
-      slug: string;
-    };
-  };
+
 
   
 
-export default async function PostPage({params} : PostPageProps) {
+export default async function PostPage({params} : {
+  params : {
+    slug : string
+  }
+}) {
   const Posts = await prisma.post.findUnique({
     where: {
-      slug : params.slug,
+      slug : params?.slug,
     }
   });
   return (
