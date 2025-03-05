@@ -11,7 +11,7 @@ export async function createPost(formData: FormData) {
         data : {
             author : {
                 connect : {
-                    email : "suneel@gmail.com"
+                    email : "test@gmail.com"
                 }
             },
             title : formData.get("title") as string,

@@ -6,6 +6,10 @@ import Link from 'next/link';
 
 export default async function Home() {
   const user = await prisma.user.findMany({
+      where:{
+        email : "test@gmail.com"
+      }
+      ,
       include : {
         posts : true
       }
